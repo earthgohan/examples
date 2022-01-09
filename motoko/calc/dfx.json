@@ -1,7 +1,18 @@
 {
   "canisters": {
     "calc": {
-      "main": "src/Main.mo"
+      "main": "src/Main.mo",
+      "type": "motoko"
+    },
+    "calc_test": {
+      "dependencies": ["calc"],
+      "main": "test/Main.mo",
+      "type": "motoko"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "vessel sources"
     }
   },
   "dfx": "0.8.4"

@@ -33,6 +33,8 @@ Verify the following before running this demo:
    create a port conflict on 8000.
 
 ## Demo
+Follow vessel steps 1 - 4
+0. https://github.com/dfinity/vessel#getting-started
 
 1. Start a local internet computer.
 
@@ -54,10 +56,11 @@ Verify the following before running this demo:
    dfx build
    ```
 
-1. Deploy your canister.
+1. Deploy your canisters.
 
    ```text
    dfx canister install calc
+   dfx canister install calc_test
    ```
 
 1. Multiply 2 by 3.
@@ -72,3 +75,24 @@ Verify the following before running this demo:
    ```text
    (6)
    ```
+
+## Developing
+   ```text
+   dfx build && dfx canister install calc -m reinstall
+   ```
+   ```text
+   dfx build && dfx canister install calc_test -m reinstall
+   ```
+## Testing
+
+   1. ```text
+   dfx canister call calc_test test
+   ```
+   1. Observe the following result.
+      
+   ```text
+   (""test add 1" succeeded.
+   "test add 3" succeeded.
+   Success! 2/2 succeeded.")
+   ```
+
